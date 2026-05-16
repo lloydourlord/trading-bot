@@ -1,0 +1,17 @@
+{
+  "name": "deriv",
+  "version": "1.0.0",
+  "description": "sample deriv app",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "ws": "^8.20.1"
+  }
+}
