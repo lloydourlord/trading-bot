@@ -86,7 +86,7 @@ async function getDerivOTP() {
             console.log('Authenticated WebSocket URL:', result.data.url);
             // Example Output: wss://://derivws.com
 
-            const ws = new WebSocket(trading_otp);
+            const ws = new WebSocket(`${result.data.url}`);
 
             let latestData = null;
 
@@ -97,7 +97,7 @@ async function getDerivOTP() {
               ws.send(JSON.stringify({ authorize: API_TOKEN }));
 
               // Subscribe to ticks for EURUSD (change symbol if needed)
-              ws.send(JSON.stringify({ ticks: "frxEURUSD", subscribe: 1 }));
+              ws.send(JSON.stringify({ ticks: ["R_10","R_25","R_50","R_75", "R_100"], subscribe: 1 }));
             };
 
             ws.onmessage = (event) => {
